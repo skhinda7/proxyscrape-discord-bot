@@ -25,7 +25,7 @@ client.on('messageCreate', (msg => {
         .setDescription('``US`` proxies have been delivered to your DM!')
         .setFooter(`Proxy Bot | Powered by Skhinda#0001`, 'https://pbs.twimg.com/profile_images/1345808481207648258/0qJwtwyW_400x400.jpg')
     request.get({
-        uri: usProxyLink,
+        uri: "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=5000&country=US&anonymity=all&ssl=yes&limit=15",
     }, function (err, resp, body) {
     msg.author.send(body)
     msg.channel.send({embeds:[embed]})
@@ -43,7 +43,7 @@ client.on('messageCreate', (msg => {
         .setDescription('``CN`` proxies have been delivered to your DM!')
         .setFooter(`Proxy Bot | Powered by Skhinda#0001`, 'https://pbs.twimg.com/profile_images/1345808481207648258/0qJwtwyW_400x400.jpg')
     request.get({
-            uri: cnProxyLink,
+            uri: "https://api.proxyscrape.com/?request=getproxies&proxytype=http&country=CN&anonymity=all&ssl=yes&limit=15",
         }, function (err, resp, body) {
     msg.author.send(body)
     msg.channel.send({embeds:[embed]})
@@ -61,7 +61,7 @@ client.on('messageCreate', (msg => {
         .setDescription('``Global`` proxies have been delivered to your DM!')
         .setFooter(`Proxy Bot | Powered by Skhinda#0001`, 'https://pbs.twimg.com/profile_images/1345808481207648258/0qJwtwyW_400x400.jpg')
         request.get({
-            uri: allProxyLink,
+            uri: "https://api.proxyscrape.com/?request=getproxies&proxytype=http&country=all&anonymity=all&ssl=yes&limit=25",
         }, function (err, resp, body) {
         msg.author.send(body)
         msg.channel.send({embeds:[embed]})
